@@ -1,0 +1,30 @@
+﻿<Window x:Class="planner.Second"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:planner"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Ежедневник" Height="534" Width="800">
+    <Grid x:Name="SecondWindow" Background="#FFD0F1E8">
+        <Border MinWidth="400" Margin="15" Background="AliceBlue" VerticalAlignment="Center" Padding="30" MaxWidth="800" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50" Color="#FF64649E" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock x:Name="TextBloxLog" Text="Список пользователей" FontSize="30" FontWeight="Bold" Margin="180,0,158,0" />
+                <ListView x:Name="listOfUsers" Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="{Binding Login}" FontWeight="Bold"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="Войти" HorizontalAlignment="Right" Height="22" FontFamily="Tw Cen MT" FontSize="12" RenderTransformOrigin="0.508,-0.795" Click="Button_Entrance_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

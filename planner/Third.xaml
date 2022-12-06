@@ -1,0 +1,19 @@
+﻿<Window x:Class="planner.Third"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:planner"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Ежедневник" Height="450" Width="800" Loaded="DataGrid_Loaded">
+    <Grid>
+        <DataGrid x:Name="dgTaskList" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=CreationDate}" IsReadOnly="False" Header="Дата сдачи" Width="150"/>
+                <DataGridCheckBoxColumn Binding="{Binding Path=IsDone}" IsReadOnly="False" Header="Состояние" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path=Text}" IsReadOnly="False" Header="Задача" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
